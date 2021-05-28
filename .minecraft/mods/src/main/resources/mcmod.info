@@ -1,0 +1,16 @@
+[
+{
+  "modid": "player_movement_handler_mod",
+  "name": "Player Handler Mod",
+  "description": "Player Movement Handler",
+  "version": "1.0",
+  "mcversion": "1.12.2",
+  "url": "https://github.com/Moss-J/Cinematographer-in-MC",
+  "updateUrl": "",
+  "authorList": ["Moss Jia"],
+  "credits": "ICE_JIT",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

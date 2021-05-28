@@ -1,0 +1,15 @@
+The order of the map for the experiment :
+Player1's map order:
+1st£ºM1S1
+2nd£ºM1S3
+3rd£ºM1S8
+
+Player2's map order:
+1st£ºM1S3
+2nd£ºM1S8
+3rd£ºM1S1
+
+Player3's map order:
+1st£ºM1S8
+2nd£ºM1S1
+3rd£ºM1S3
