@@ -3,7 +3,7 @@
 You can use the [editor on GitHub](https://github.com/Moss-J/Cinematographer-in-GDMC/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/Lgc8oYhl4Oc/0.jpg)](https://youtu.be/Lgc8oYhl4Oc "Video Title")
+[![Go To Youtube](http://img.youtube.com/vi/Lgc8oYhl4Oc/0.jpg)](https://youtu.be/Lgc8oYhl4Oc "Player 1 Map 1")
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
