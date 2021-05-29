@@ -4,6 +4,8 @@ You can use the [editor on GitHub](https://github.com/Moss-J/Cinematographer-in-
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 [![Go To Youtube](http://img.youtube.com/vi/Lgc8oYhl4Oc/0.jpg)](https://youtu.be/Lgc8oYhl4Oc "Player 1 Map 1")
+[![Go To Youtube](http://img.youtube.com/vi/Lgc8oYhl4Oc/0.jpg)](https://youtu.be/zGHvflma0fs "Player 1 Map 2")
+[![Go To Youtube](http://img.youtube.com/vi/Lgc8oYhl4Oc/0.jpg)](https://youtu.be/RUULEdYTeRw "Player 1 Map 3")
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
