@@ -26,6 +26,10 @@ class PlayerMovementHandler:
         return True
 
     def player_reached_rotation(self, target_angle):
+        if target_angle >= 360.0:
+            target_angle -= 360.0
+        elif target_angle < 0.0:
+            target_angle += 360.0
         realtime = self.get_player_info()
         if not math.isclose(realtime['YAW'], target_angle, rel_tol=0.001):
             return False

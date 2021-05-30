@@ -15,18 +15,23 @@ class DirectionIndicator:
         self.pre_point = point
 
     def get_direction(self, pos):
+        # print('pre pos = ', self.pre_point)
+        # print('now pos = ', pos)
+        # print('gravity_point= ', self.gravity_point)
         a1 = pos - self.pre_point
         b1 = self.gravity_point - pos
         a2 = a1 / np.linalg.norm(a1)
         b2 = b1 / np.linalg.norm(b1)
         loc_cross = np.cross(b2, a2)
         # print('loc_corss: ', loc_cross)
+
         centre_direction = "forward"
-        if loc_cross > 0.01:
+        if loc_cross > 0.1:
             centre_direction = "left"
-        elif loc_cross < -0.01:
+        elif loc_cross < -0.1:
             centre_direction = "right"
         else:
+            # print(sum(a2/b2))
             if sum(a2/b2) < 0:
                 centre_direction = 'left'
                 if np.random.rand(1)[0] >= 0.5:
@@ -37,4 +42,5 @@ class DirectionIndicator:
                     else:
                         centre_direction = 'right'
         self.pre_action = centre_direction
+        # print(centre_direction)
         return centre_direction

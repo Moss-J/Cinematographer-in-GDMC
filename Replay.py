@@ -6,6 +6,7 @@ import entropy
 import keyboard
 from sklearn import preprocessing
 import numpy as np
+from DirectionIndicator import DirectionIndicator
 
 data_n = 30
 data_set_n = 3
@@ -22,12 +23,14 @@ path = "data/" + data_set_name + "/Data_Set.xls"
 
 player_data = pd.read_excel(path, sheet_name=map_name, nrows=data_n)
 
-action_type = int(input('input the action type(0 Player action, 1 Decision Tree Prediction Action ): '))
+action_type = int(input('input the action type(0 Player Decision, 1 Decision Tree Prediction, 2  Toward Center): '))
 
 target_x = [-221.62184328424001, -245.784687740458, -187.29806596758155][map_num - 1]
 target_z = [48.96858578599651, 90.02881449401426, 42.56952920473027][map_num - 1]
 target_R = [77.54036814845725, 69.88265252376814, 77.19521414720167][map_num - 1]
 
+g_point = np.array([target_x, target_z])
+indicator = DirectionIndicator(g_point)
 
 max_count = data_n
 steer_angle = 30.0
@@ -136,9 +139,18 @@ def replay_function(command):
     global count, max_count
     command_passer(command)
     while count <= max_count:
-        time.sleep(0.1)
+        time.sleep(0.2)
         if action_type == 0:
             command_passer(player_data.action.values[count-1])
+        elif action_type == 2:
+            if cl.command_in_progress:
+                continue
+            pos = np.array([loc_x, loc_z])
+            # print(count, indicator.get_direction(pos))
+            # if count == 9:
+            #     time.sleep(1)
+            command_passer(indicator.get_direction(pos))
+            indicator.update_pre_point(pos)
 
 
 keyboard.add_hotkey('enter', replay_function, args=["init"])
