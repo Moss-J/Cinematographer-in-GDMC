@@ -121,7 +121,7 @@ keyboard.wait('esc')
 sr.stop()
 cl.stop()
 # print(data_set)
-column_names = ["H_left", "H_center", "H_right", "S_left", "S_center", "S_right"]
+column_names = ["H_left", "H_center", "H_right", "O_left", "O_center", "O_right"]
 df = pd.DataFrame(data_set, columns=column_names)
 for i in range(max_count - len(action_labels)):
     action_labels.append('None')

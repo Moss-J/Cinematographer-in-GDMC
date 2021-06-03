@@ -59,7 +59,7 @@ data_set = [data_1, data_2, data_3]
 i = 0
 a = 0
 for one_data in data_set:
-    b = max(max(one_data['S_left']), max(one_data['S_center']), max(one_data['S_right']))
+    b = max(max(one_data['O_left']), max(one_data['O_center']), max(one_data['O_right']))
     if a < b:
         a = b
 print('max value of optical flow: ', a)
@@ -68,15 +68,15 @@ for one_data in data_set:
     g_point = np.array([target_x[i], target_z[i]])
     r_sin = ((360 - target_R[i]) * np.pi / 180)
     new_features = NewFeature(one_data.action.values, g_point, speed, r_sin, r_left)
-    one_data.insert(0, "centre_directions", new_features.centre_directions, True)
-    one_data.insert(0, "distance", new_features.distance, True)
+    one_data.insert(0, "Dir", new_features.centre_directions, True)
+    one_data.insert(0, "Dis", new_features.distance, True)
     one_data['H_left'] = one_data['H_left'] / 8
     one_data['H_center'] = one_data['H_center'] / 8
     one_data['H_right'] = one_data['H_right'] / 8
 
-    one_data['S_left'] = one_data['S_left'] / a
-    one_data['S_center'] = one_data['S_center'] / a
-    one_data['S_right'] = one_data['S_right'] / a
+    one_data['O_left'] = one_data['O_left'] / a
+    one_data['O_center'] = one_data['O_center'] / a
+    one_data['O_right'] = one_data['O_right'] / a
     i += 1
 # for index, row in df.iteritems():
 #     if index != "action":
@@ -89,9 +89,9 @@ data_set_medium_distance = []
 data_set_short_distance = []
 
 for d in data_set:
-    data_set_long_distance.append(d.loc[d['distance'] >= long])
-    data_set_medium_distance.append(d.loc[(d['distance'] >= medium) & (d['distance'] < long)])
-    data_set_short_distance.append(d.loc[d['distance'] < medium])
+    data_set_long_distance.append(d.loc[d['Dis'] >= long])
+    data_set_medium_distance.append(d.loc[(d['Dis'] >= medium) & (d['Dis'] < long)])
+    data_set_short_distance.append(d.loc[d['Dis'] < medium])
 
 # fig = plt.figure()  # 生成画布
 # ax = fig.add_subplot(111)
@@ -109,10 +109,10 @@ features_H = list(data_1.columns[2:5])
 features_S = list(data_1.columns[5:8])
 features_All = list(data_1.columns[:8])
 
-print('re_H use features:', features_H)
-print('re_S use features:', features_S)
+print('re_Col use features:', features_H)
+print('re_Opt use features:', features_S)
 print('re_All use features:', features_All)
-print('re_new_F use features:', features_new)
+print('re_Dir_Dis use features:', features_new)
 
 # c_type = 'gini'
 # c_type = 'entropy'
@@ -137,7 +137,7 @@ for distance_group_name in ['short_d', 'middle_d', 'long_d']:
         mean_All_r = []
         mean_new_f_r = []
         for r in range(1, 101):
-            # print(r)
+            print(r)
             mean_H = []
             mean_S = []
             mean_All = []
@@ -213,7 +213,7 @@ for distance_group_name in ['short_d', 'middle_d', 'long_d']:
             for j in range(100):
                 sum += mean_H_r[j][i]
             final_re_H.append(sum / 100)
-        print('re_H:')
+        print('re_Col:')
         for o in final_re_H:
             print(o)
 
@@ -223,7 +223,7 @@ for distance_group_name in ['short_d', 'middle_d', 'long_d']:
             for j in range(100):
                 sum += mean_S_r[j][i]
             final_re_S.append(sum / 100)
-        print('re_S:')
+        print('re_Opt:')
         for o in final_re_S:
             print(o)
 
@@ -243,7 +243,7 @@ for distance_group_name in ['short_d', 'middle_d', 'long_d']:
             for j in range(100):
                 sum += mean_new_f_r[j][i]
             final_re_new_f.append(sum / 100)
-        print('re_new_F:')
+        print('re_dir_dis:')
         for o in final_re_new_f:
             print(o)
 

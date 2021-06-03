@@ -7,12 +7,16 @@ class DirectionIndicator:
         self.origin_point = origin_point
         self.pre_point = origin_point
         self.pre_action = 'forward'
+        self.threshold = 0.01
 
     def __str__(self):
         return '[gravity_point:%s,%s]' % self.gravity_point  # 可视化object
 
     def update_pre_point(self, point):
         self.pre_point = point
+
+    def set_threshold(self, threshold):
+        self.threshold = threshold
 
     def get_direction(self, pos):
         # print('pre pos = ', self.pre_point)
@@ -26,9 +30,9 @@ class DirectionIndicator:
         # print('loc_corss: ', loc_cross)
 
         centre_direction = "forward"
-        if loc_cross > 0.1:
+        if loc_cross > self.threshold:
             centre_direction = "left"
-        elif loc_cross < -0.1:
+        elif loc_cross < -self.threshold:
             centre_direction = "right"
         else:
             # print(sum(a2/b2))
