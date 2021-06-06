@@ -27,4 +27,16 @@ Each player uses different map order.
 
 ### Experimental Data Acquisition 
 
-With the MC(Minecraft 1.12.2 720x480 resolution) open, run [DataCollector.py](https://github.com/Moss-J/Minecraft-Cinematographer-AI/blob/main/DataCollector.py). 
+With the MC(Minecraft 1.12.2 720x480 resolution) open and enter the initialized map, run [DataCollector.py](https://github.com/Moss-J/Minecraft-Cinematographer-AI/blob/main/DataCollector.py). 
+
+### Cross-Validation
+
+Run [CrossValidation_distance.py](https://github.com/Moss-J/Minecraft-Cinematographer-AI/blob/main/CrossValidation_distance.py). 
+
+### Verify Accuracy of a Specific Model 
+
+Run [AccuracyCalculation_distance.py](https://github.com/Moss-J/Minecraft-Cinematographer-AI/blob/main/AccuracyCalculation_distance.py). 
+
+### Application System to Actual Game Environment
+
+With the MC(Minecraft 1.12.2 720x480 resolution) open and enter the initialized map, run [Replay.py](https://github.com/Moss-J/Minecraft-Cinematographer-AI/blob/main/Replay.py). 
