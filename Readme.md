@@ -9,9 +9,9 @@ pip install -r requirement.txt
 ```
 ### Install Minecraft Mod and Maps
 
-Overwrite ".minecraft" to "%AppData%\.minecraft" to install Minecraft mod and maps.
+Overwrite ".minecraft" to "%AppData%/.minecraft" to install Minecraft mod and maps.
 
-Mod's Information:
+#### Mod's Information:
 
 player movement handler mod for [MC 1.12.2 jave ver.](https://www.minecraft.net/ja-jp/store/minecraft-java-edition)
 
