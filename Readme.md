@@ -24,3 +24,7 @@ source code in "/.minecraft/mods/src/".
 The experimental data of 3 players is stored in the data folder in the form of excel files, which are read and processed by script files. 
 
 Each player uses different map order.
+
+### Experimental Data Acquisition 
+
+With the MC(Minecraft 1.12.2 720x480 resolution) open, run [DataCollector.py](https://github.com/Moss-J/Minecraft-Cinematographer-AI/blob/main/DataCollector.py). 
