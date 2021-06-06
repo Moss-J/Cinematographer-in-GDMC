@@ -18,3 +18,9 @@ player movement handler mod for [MC 1.12.2 jave ver.](https://www.minecraft.net/
 using [forge-1.12.2-14.23.5.2855](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.12.2.html)
 
 source code in "/.minecraft/mods/src/".
+
+### Experimental Data
+
+The experimental data of 3 players is stored in the data folder in the form of excel files, which are read and processed by script files. 
+
+Each player uses different map order.
